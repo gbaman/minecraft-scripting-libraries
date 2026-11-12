@@ -29,33 +29,33 @@
     {{/has_closure_privilege_type_comments}}
     {{#set_disallowed_in_restricted_execution}}
       {{#get_disallowed_in_restricted_execution}}
- * This property can't be used in restricted-execution mode.
+ * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
  *
       {{/get_disallowed_in_restricted_execution}}
       {{^get_disallowed_in_restricted_execution}}
- * This property can't be edited in restricted-execution mode.
+ * @privilege restricted-execution-read-only - This property can't be edited in restricted-execution mode.
  *
       {{/get_disallowed_in_restricted_execution}}
     {{/set_disallowed_in_restricted_execution}}
     {{^set_disallowed_in_restricted_execution}}
       {{#get_disallowed_in_restricted_execution}}
- * This property can't be read in restricted-execution mode.
+ * @privilege restricted-execution-non-readable - This property can't be read in restricted-execution mode.
  *
       {{/get_disallowed_in_restricted_execution}}
     {{/set_disallowed_in_restricted_execution}}
     {{#set_allowed_in_early_execution}}
       {{#get_allowed_in_early_execution}}
- * This property can be used in early-execution mode.
+ * @privilege early-execution-usable - This property can be used in early-execution mode.
  *
       {{/get_allowed_in_early_execution}}
       {{^get_allowed_in_early_execution}}
- * This property can be edited in early-execution mode.
+ * @privilege early-execution-editable - This property can be edited in early-execution mode.
  *
       {{/get_allowed_in_early_execution}}
     {{/set_allowed_in_early_execution}}
     {{^set_allowed_in_early_execution}}
       {{#get_allowed_in_early_execution}}
- * This property can be read in early-execution mode.
+ * @privilege early-execution-readable - This property can be read in early-execution mode.
  *
       {{/get_allowed_in_early_execution}}
     {{/set_allowed_in_early_execution}}
@@ -66,6 +66,20 @@
  *
     {{/default_value}}
   {{/has_defaults}}
+  {{#has_bounds}}
+ * Bounds: [{{min_value}}, {{max_value}}]
+  {{/has_bounds}}
+  {{^has_bounds}}
+    {{#has_minimum}}
+ * Minimum Value: {{min_value}}
+    {{/has_minimum}}
+    {{#has_maximum}}
+ * Maximum Value: {{max_value}}
+    {{/has_maximum}}
+  {{/has_bounds}}
+  {{#has_max_length}}
+ * Maximum Length: {{max_length}}
+  {{/has_max_length}}
  {{#throws_description_ts.length}}
  * @throws
    {{#throws_description_ts}}

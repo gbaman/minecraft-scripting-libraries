@@ -464,9 +464,9 @@ Type: *string*
 
 exports[`Pre-release Warning > Properly generates documentation with a warning for pre-release modules > typescript/prerelease-module@1.0.0-beta.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -489,9 +489,9 @@ exports[`Pre-release Warning > Properly generates documentation with a warning f
 
 exports[`Pre-release Warning > Properly generates documentation with a warning for pre-release modules > typescript/stable-module@1.0.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -522,9 +522,9 @@ export interface StableInterface {}
 
 exports[`Pre-release Warning > Properly generates documentation with a warning for pre-release modules > typescript/stable-module@2.0.0-beta.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -570,14 +570,14 @@ export class StableClass {
     /**
      * @beta
      * @remarks
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     prereleaseProperty: number;
     /**
      * @beta
      * @remarks
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      */
     prereleaseMethod(): number;
@@ -598,7 +598,7 @@ export interface StableInterface {
 /**
  * @beta
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
  */
 export function prereleaseFunction(): boolean;

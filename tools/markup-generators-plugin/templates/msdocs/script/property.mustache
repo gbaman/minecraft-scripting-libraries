@@ -26,6 +26,20 @@ Notes:
   - This property defaults to `{{> value}}` when undefined.
     {{/default_value}}
   {{/has_defaults}}
+  {{#has_bounds}}
+  - This property has a bounds of [`{{min_value}}`, `{{max_value}}`]
+  {{/has_bounds}}
+  {{^has_bounds}}
+    {{#has_minimum}}
+  - This property has a minimum bound of `{{min_value}}`
+    {{/has_minimum}}
+    {{#has_maximum}}
+  - This property has a maximum bound of `{{max_value}}`
+    {{/has_maximum}}
+  {{/has_bounds}}
+  {{#has_max_length}}
+  - This property has a maximum length of `{{max_length}}`
+  {{/has_max_length}}
   {{#set_disallowed_in_restricted_execution}}
     {{#get_disallowed_in_restricted_execution}}
   - This property can't be used in restricted-execution mode.

@@ -24,11 +24,11 @@
  *
     {{/function_description_ts.length}}
     {{#call_disallowed_in_restricted_execution}}
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
     {{/call_disallowed_in_restricted_execution}}
     {{#call_allowed_in_early_execution}}
- * This function can be called in early-execution mode.
+ * @privilege early-execution-allowed - This function can be called in early-execution mode.
  *
     {{/call_allowed_in_early_execution}}
   {{/ts_has_remarks}}
@@ -48,6 +48,20 @@
  * Defaults to: {{> value}}
         {{/details.default_value}}
       {{/has_defaults}}
+      {{#has_bounds}}
+ * Bounds: [{{details.min_value}}, {{details.max_value}}]
+      {{/has_bounds}}
+      {{^has_bounds}}
+        {{#has_minimum}}
+ * Minimum value: {{details.min_value}}
+        {{/has_minimum}}
+        {{#has_maximum}}
+ * Maximum value: {{details.max_value}}
+        {{/has_maximum}}      
+      {{/has_bounds}}
+      {{#has_max_length}}
+ * Maximum Length: {{details.max_length}}
+      {{/has_max_length}}
     {{/ts_has_comments}}
   {{/arguments}}
   {{#returns_description_ts.length}}

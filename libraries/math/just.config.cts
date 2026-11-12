@@ -8,7 +8,6 @@ import {
     apiExtractorTask,
     cleanTask,
     coreLint,
-    publishReleaseTask,
     vitestTask,
 } from '@minecraft/core-build-tasks';
 import { copyFileSync, readFileSync } from 'node:fs';
@@ -24,7 +23,7 @@ task('typescript', tscTask());
 task('api-extractor-local', apiExtractorTask('./api-extractor.json', isOnlyBuild /* localBuild */));
 task('bundle', () => {
     execSync(
-        'npx esbuild ./lib/index.js --bundle --outfile=dist/minecraft-math.js --format=esm --sourcemap --external:@minecraft/server'
+        'npx esbuild ./lib/src/index.js --bundle --outfile=dist/minecraft-math.js --format=esm --sourcemap --external:@minecraft/server',
     );
     // Copy over type definitions and rename
     const officialTypes = JSON.parse(readFileSync('./package.json', 'utf-8'))['types'];
@@ -44,12 +43,3 @@ task('test', series('api-extractor-validate', 'vitest'));
 
 // Clean
 task('clean', cleanTask(DEFAULT_CLEAN_DIRECTORIES));
-
-// Post-publish
-task('postpublish', () => {
-    return publishReleaseTask({
-        repoOwner: 'Mojang',
-        repoName: 'minecraft-scripting-libraries',
-        message: 'See attached zip for pre-built minecraft-math bundle with type declarations.',
-    });
-});

@@ -18,6 +18,7 @@ import {
     MinecraftBlockProperty,
     MinecraftClass,
     MinecraftCommand,
+    MinecraftCommandArgument,
     MinecraftCommandEnum,
     MinecraftCommandModule,
     MinecraftEnum,
@@ -222,7 +223,7 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
             default_metadata: mdTemplateFiles.readFileAsString('script/default_metadata.mustache'),
 
             // TypeScript Partials
-            function_declaration: tsTemplateFiles.readFileAsString('function_declaration.mustache'),
+            function_declaration: mdTemplateFiles.readFileAsString('script/function_declaration.mustache'),
             function_argument_declaration: tsTemplateFiles.readFileAsString('function_argument_declaration.mustache'),
             type: tsTemplateFiles.readFileAsString('type.mustache'),
         });
@@ -251,7 +252,7 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
             default_metadata: mdTemplateFiles.readFileAsString('script/default_metadata.mustache'),
 
             // TypeScript Partials
-            function_declaration: tsTemplateFiles.readFileAsString('function_declaration.mustache'),
+            function_declaration: mdTemplateFiles.readFileAsString('script/function_declaration.mustache'),
             function_argument_declaration: tsTemplateFiles.readFileAsString('function_argument_declaration.mustache'),
             type: tsTemplateFiles.readFileAsString('type.mustache'),
         });
@@ -300,7 +301,7 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
             default_metadata: mdTemplateFiles.readFileAsString('script/default_metadata.mustache'),
 
             // TypeScript Partials
-            function_declaration: tsTemplateFiles.readFileAsString('function_declaration.mustache'),
+            function_declaration: mdTemplateFiles.readFileAsString('script/function_declaration.mustache'),
             function_argument_declaration: tsTemplateFiles.readFileAsString('function_argument_declaration.mustache'),
             type: tsTemplateFiles.readFileAsString('type.mustache'),
         });
@@ -316,6 +317,7 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
         outputDirectory: string
     ): void {
         const msdocsTemplateFileData = mdTemplateFiles.readFileAsString('script/module_changelog.mustache');
+
         moduleJson.mustache_config = MUSTACHE_CONFIG;
 
         const msdocsProcessedData = mustache.render(msdocsTemplateFileData, moduleJson, {
@@ -330,7 +332,7 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
             default_metadata: mdTemplateFiles.readFileAsString('script/default_metadata.mustache'),
 
             // TypeScript Partials
-            function_declaration: tsTemplateFiles.readFileAsString('function_declaration.mustache'),
+            function_declaration: mdTemplateFiles.readFileAsString('script/function_declaration.mustache'),
             function_argument_declaration: tsTemplateFiles.readFileAsString('function_argument_declaration.mustache'),
             type: tsTemplateFiles.readFileAsString('type.mustache'),
         });
@@ -385,9 +387,27 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
         outputDirectory: string
     ): void {
         const msdocsTemplateFileData = mdTemplateFiles.readFileAsString('commands/command.mustache');
-        const msdocsProcessedData = mustache.render(msdocsTemplateFileData, commandJson, {
+        const formatArgument = (argument: MinecraftCommandArgument) => ({
+            ...argument,
+            table_description: Utils.formatMarkdownTableCell((argument.argument_description ?? []).join('\n')),
+            table_type: argument.type.has_link
+                ? `[${argument.type.name}](${argument.type.is_enum ? '../enums/' : '../../CommandTypes/'}${encodeURIComponent(argument.type.name)}.md)`
+                : argument.type.name,
+        });
+        const commandView = {
+            ...commandJson,
+            arguments: commandJson.arguments?.map(formatArgument),
+            overloads: commandJson.overloads?.map(overload => ({
+                ...overload,
+                usage_arguments: overload.params
+                    .filter(argument => !argument.type.is_keyword || argument.is_optional)
+                    .map(formatArgument),
+            })),
+        };
+        const msdocsProcessedData = mustache.render(msdocsTemplateFileData, commandView, {
             overload: mdTemplateFiles.readFileAsString('commands/overload.mustache'),
             parameter: mdTemplateFiles.readFileAsString('commands/parameter.mustache'),
+            example: mdTemplateFiles.readFileAsString('commands/example.mustache'),
             inline_enum: mdTemplateFiles.readFileAsString('commands/inline_enum.mustache'),
             default_metadata: mdTemplateFiles.readFileAsString('commands/default_metadata.mustache'),
         });
@@ -411,13 +431,13 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
     }
 
     private generateCommandsTableOfContents(
-        commandsJson: MinecraftCommand[],
+        moduleJson: MinecraftCommandModule,
         mdTemplateFiles: FileLoader,
         outputDirectory: string
     ): void {
         const msdocsTemplateFileData = mdTemplateFiles.readFileAsString('commands/toc.mustache');
         const msdocsProcessedData = mustache.render(msdocsTemplateFileData, {
-            commands: commandsJson,
+            commands: moduleJson.commands,
         });
         const msdocsModuleFilePath = path.join(outputDirectory, `TOC.yml`);
         fs.mkdirSync(path.dirname(msdocsModuleFilePath), { recursive: true });
@@ -433,9 +453,18 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
         const summaryProcessedData = mustache.render(
             summaryTemplateFileData,
             {
-                commands: moduleJson.commands,
-                command_enums: moduleJson.command_enums,
-                command_types: moduleJson.command_types,
+                commands: moduleJson.commands?.map(command => ({
+                    ...command,
+                    table_description: Utils.formatMarkdownTableCell(
+                        command.command_description?.length
+                            ? command.command_description.join('\n')
+                            : (command.description ?? '')
+                    ),
+                })),
+                command_enums: moduleJson.command_enums?.map(commandEnum => ({
+                    ...commandEnum,
+                    table_description: Utils.formatMarkdownTableCell(commandEnum.enum_description?.join('\n') ?? ''),
+                })),
             },
             {
                 default_metadata: mdTemplateFiles.readFileAsString('commands/default_metadata.mustache'),
@@ -569,7 +598,7 @@ export class MSDocsMarkdownGenerator implements MarkupGenerator {
 
             this.generateCommandsSummaryFile(moduleJson, mdTemplateFiles, commandsMSDocsOutputPath);
 
-            this.generateCommandsTableOfContents(moduleJson.commands, mdTemplateFiles, commandsMSDocsOutputPath);
+            this.generateCommandsTableOfContents(moduleJson, mdTemplateFiles, commandsMSDocsOutputPath);
         }
 
         ///

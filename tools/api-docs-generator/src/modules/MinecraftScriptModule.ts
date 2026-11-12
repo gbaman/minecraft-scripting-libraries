@@ -53,6 +53,10 @@ export const MarkupCommentFlagsValidator = Intersect(
     Record({
         has_changes: Optional(Boolean),
         has_defaults: Optional(Boolean),
+        has_minimum: Optional(Boolean),
+        has_maximum: Optional(Boolean),
+        has_bounds: Optional(Boolean),
+        has_max_length: Optional(Boolean),
         has_errors: Optional(Boolean),
 
         prerelease: Optional(String),
@@ -342,8 +346,20 @@ export const MinecraftPropertyRecord = Intersect(
     Record({
         type: MinecraftTypeRecord,
         is_read_only: Boolean,
+        min_value: Optional(Unknown.Or(Null)),
+        max_value: Optional(Unknown.Or(Null)),
         is_baked: Optional(Boolean),
         default_value: Optional(Unknown.Or(Null)),
+        min_added: Optional(Boolean),
+        min_changed: Optional(Boolean),
+        min_removed: Optional(Boolean),
+        max_added: Optional(Boolean),
+        max_changed: Optional(Boolean),
+        max_removed: Optional(Boolean),
+        max_length: Optional(Number.Or(Null)),
+        max_length_added: Optional(Boolean),
+        max_length_changed: Optional(Boolean),
+        max_length_removed: Optional(Boolean),
 
         // Runtime Markup
         property_name: Optional(String.Or(Null)),
@@ -366,6 +382,7 @@ export const MinecraftFunctionArgumentDetailsRecord = Record({
     default_value: Optional(Unknown.Or(Null)),
     min_value: Optional(Unknown.Or(Null)),
     max_value: Optional(Unknown.Or(Null)),
+    max_length: Optional(Number.Or(Null)),
     supported_values: Optional(Unknown.Or(Null)),
 });
 export type MinecraftFunctionArgumentDetails = Static<typeof MinecraftFunctionArgumentDetailsRecord>;
@@ -376,6 +393,12 @@ export const MinecraftFunctionArgumentRecord = Intersect(
     Record({
         type: MinecraftTypeRecord,
         details: Optional(MinecraftFunctionArgumentDetailsRecord.Or(Null)),
+        min_added: Optional(Boolean),
+        min_changed: Optional(Boolean),
+        min_removed: Optional(Boolean),
+        max_added: Optional(Boolean),
+        max_changed: Optional(Boolean),
+        max_removed: Optional(Boolean),
 
         // Runtime Markup
         argument_description: Optional(Array(String).Or(Null)),
@@ -426,6 +449,7 @@ export const MinecraftErrorRecord = Intersect(
     Record({
         type: MinecraftTypeRecord,
 
+        functions: Optional(Array(MinecraftFunctionRecord).Or(Null)),
         properties: Optional(Array(MinecraftPropertyRecord).Or(Null)),
 
         // Runtime Markup
@@ -433,6 +457,8 @@ export const MinecraftErrorRecord = Intersect(
         from_module: Optional(MinecraftModuleDescriptionRecord.Or(Null)),
         class_name: Optional(String.Or(Null)),
         class_description: Optional(Array(String).Or(Null)),
+        has_constructor: Optional(Boolean.Or(Null)),
+        has_member_functions: Optional(Boolean.Or(Null)),
         show_prior_warning: Optional(Boolean),
         prior_link: Optional(String),
     })

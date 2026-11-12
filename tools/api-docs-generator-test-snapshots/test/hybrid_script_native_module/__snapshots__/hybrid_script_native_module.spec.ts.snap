@@ -64,7 +64,7 @@ description: Contents of the hybrid-module module (Version 0.x.x)
 ## Available Versions
 - \`0.1.0\`
 
-# Type Aliases
+## Type Aliases
 - [TypeAliasWithTSDocComments](TypeAliasWithTSDocComments.md)
 
 ## Functions
@@ -317,7 +317,7 @@ This is version 1.x.x of this module, which is the latest as of version 1.0.0 of
 ## Enumerations
 - [ScriptGeneratedEnum](ScriptGeneratedEnum.md)
 
-# Type Aliases
+## Type Aliases
 - [TypeAliasWithInfoJsonComments](TypeAliasWithInfoJsonComments.md)
 - [TypeAliasWithTSDocComments](TypeAliasWithTSDocComments.md)
 
@@ -452,9 +452,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/priorscriptapi/hybrid-module
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > npm/types/hybrid-module@0.1.0/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -516,9 +516,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module/hybr
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > npm/types/hybrid-module@1.0.0/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -564,7 +564,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -573,7 +573,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -630,9 +630,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module/hybr
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > npm/types/hybrid-module@1.1.0-beta/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -683,7 +683,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -692,7 +692,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -751,9 +751,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/priorscriptapi/hybrid-module
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > npm/types/hybrid-module-native@0.1.0/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -803,9 +803,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module-nati
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > npm/types/hybrid-module-native@1.0.0/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -857,9 +857,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module-nati
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > npm/types/hybrid-module-native@1.1.0-beta/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -916,9 +916,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module-nati
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > npm/types/hybrid-module-native@1.1.0-internal/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -969,9 +969,9 @@ exports[`Hybrid Script and Native Module > Generates documentation for both the 
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > typescript/hybrid-module@0.1.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1006,9 +1006,9 @@ export function NativeBoundFunction(): boolean;
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > typescript/hybrid-module@1.0.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1054,7 +1054,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -1063,7 +1063,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -1091,9 +1091,9 @@ export function NativeBoundFunction(): boolean;
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > typescript/hybrid-module@1.1.0-beta.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1144,7 +1144,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -1153,7 +1153,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -1185,9 +1185,9 @@ export function NativeBoundFunction_Beta(): boolean;
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > typescript/hybrid-module-native@0.1.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1210,9 +1210,9 @@ export function NativeBoundFunction(): boolean;
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > typescript/hybrid-module-native@1.0.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1235,9 +1235,9 @@ export function NativeBoundFunction(): boolean;
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > typescript/hybrid-module-native@1.1.0-beta.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1265,9 +1265,9 @@ export function NativeBoundFunction_Beta(): boolean;
 
 exports[`Hybrid Script and Native Module > Generates documentation for both the base and derived modules if the flag is explicitly set > typescript/hybrid-module-native@1.1.0-internal.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1357,7 +1357,7 @@ description: Contents of the hybrid-module module (Version 0.x.x)
 ## Available Versions
 - \`0.1.0\`
 
-# Type Aliases
+## Type Aliases
 - [TypeAliasWithTSDocComments](TypeAliasWithTSDocComments.md)
 
 ## Functions
@@ -1573,7 +1573,7 @@ This is version 1.x.x of this module, which is the latest as of version 1.0.0 of
 ## Enumerations
 - [ScriptGeneratedEnum](ScriptGeneratedEnum.md)
 
-# Type Aliases
+## Type Aliases
 - [TypeAliasWithInfoJsonComments](TypeAliasWithInfoJsonComments.md)
 - [TypeAliasWithTSDocComments](TypeAliasWithTSDocComments.md)
 
@@ -1690,9 +1690,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/priorscriptapi/hybrid-module
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > npm/types/hybrid-module@0.1.0/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1754,9 +1754,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module/hybr
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > npm/types/hybrid-module@1.0.0/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1802,7 +1802,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -1811,7 +1811,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -1868,9 +1868,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module/hybr
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > npm/types/hybrid-module@1.1.0-beta/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -1921,7 +1921,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -1930,7 +1930,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -1991,9 +1991,9 @@ https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/hybrid-module-nati
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > npm/types/hybrid-module-native@1.1.0-internal/index.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -2038,9 +2038,9 @@ exports[`Hybrid Script and Native Module > Properly generates documentation for 
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > typescript/hybrid-module@0.1.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -2075,9 +2075,9 @@ export function NativeBoundFunction(): boolean;
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > typescript/hybrid-module@1.0.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -2123,7 +2123,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -2132,7 +2132,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -2160,9 +2160,9 @@ export function NativeBoundFunction(): boolean;
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > typescript/hybrid-module@1.1.0-beta.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -2213,7 +2213,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -2222,7 +2222,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc
@@ -2254,9 +2254,9 @@ export function NativeBoundFunction_Beta(): boolean;
 
 exports[`Hybrid Script and Native Module > Properly generates documentation for modules generated from a hybrid of script and native bindings > typescript/hybrid-module-native@1.1.0-internal.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.

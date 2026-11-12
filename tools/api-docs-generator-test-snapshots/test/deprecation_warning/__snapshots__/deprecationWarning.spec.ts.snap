@@ -628,9 +628,9 @@ Type: *string*
 
 exports[`Deprecation Warning > Properly generates documentation with a warning for deprecated APIs > typescript/deprecation-module@1.0.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -681,13 +681,13 @@ export class StableClassWithDeprecatedMembers {
      * @deprecated This property is deprecated and will be removed in 2.0.0.
      *
      * @remarks
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     deprecatedProperty: boolean;
     /**
      * @remarks
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     stableProperty: boolean;
@@ -700,13 +700,13 @@ export class StableClassWithDeprecatedMembers {
      * @deprecated This function is deprecated and will be removed in 2.0.0.
      *
      * @remarks
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      */
     deprecatedFunction(): boolean;
     /**
      * @remarks
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      */
     stableFunction(): boolean;
@@ -731,7 +731,7 @@ export interface StableInterfaceWithDeprecatedProperty {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class DeprecatedError extends Error {
     private constructor();
-    exampleProperty: string[];
+    readonly exampleProperty: string[];
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -740,15 +740,15 @@ export class StableErrorWithDeprecatedProperty extends Error {
     /**
      * @deprecated This property is deprecated and will be removed in 2.0.0.
      */
-    deprecatedProperty: string[];
-    stableProperty?: string;
+    readonly deprecatedProperty: string[];
+    readonly stableProperty?: string;
 }
 
 /**
  * @deprecated This function is deprecated and will be removed in 2.0.0.
  *
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
  */
 export function deprecatedGlobalFunction(): boolean;
@@ -756,7 +756,7 @@ export function deprecatedGlobalFunction(): boolean;
  * @deprecated This function is deprecated and will be removed in 2.0.0.
  *
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
  */
 export function stableGlobalFunction(): boolean;
@@ -770,9 +770,9 @@ export const deprecatedObject: string;
 
 exports[`Deprecation Warning > Properly generates documentation with a warning for deprecated APIs > typescript/deprecation-module@1.1.0-beta.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -824,13 +824,13 @@ export class StableClassWithDeprecatedMembers {
      * @deprecated This property is deprecated and will be removed in 2.0.0.
      *
      * @remarks
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     deprecatedProperty: boolean;
     /**
      * @remarks
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     stableProperty: boolean;
@@ -843,13 +843,13 @@ export class StableClassWithDeprecatedMembers {
      * @deprecated This function is deprecated and will be removed in 2.0.0.
      *
      * @remarks
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      */
     deprecatedFunction(): boolean;
     /**
      * @remarks
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      */
     stableFunction(): boolean;
@@ -874,7 +874,7 @@ export interface StableInterfaceWithDeprecatedProperty {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class DeprecatedError extends Error {
     private constructor();
-    exampleProperty: string[];
+    readonly exampleProperty: string[];
 }
 
 // @ts-ignore Class inheritance allowed for native defined classes
@@ -883,14 +883,14 @@ export class StableErrorWithDeprecatedProperty extends Error {
     /**
      * @deprecated This property is deprecated and will be removed in 2.0.0.
      */
-    deprecatedProperty: string[];
-    stableProperty?: string;
+    readonly deprecatedProperty: string[];
+    readonly stableProperty?: string;
 }
 
 /**
  * @beta
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
  */
 export function betaGlobalFunctionNotInAlpha(): boolean;
@@ -898,7 +898,7 @@ export function betaGlobalFunctionNotInAlpha(): boolean;
  * @deprecated This function is deprecated and will be removed in 2.0.0.
  *
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
  */
 export function deprecatedGlobalFunction(): boolean;
@@ -906,7 +906,7 @@ export function deprecatedGlobalFunction(): boolean;
  * @deprecated This function is deprecated and will be removed in 2.0.0.
  *
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
  */
 export function stableGlobalFunction(): boolean;
@@ -920,9 +920,9 @@ export const deprecatedObject: string;
 
 exports[`Deprecation Warning > Properly generates documentation with a warning for deprecated APIs > typescript/deprecation-module@2.0.0-alpha.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -948,14 +948,14 @@ export class StableClassWithDeprecatedMembers {
     private constructor();
     /**
      * @remarks
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     stableProperty: boolean;
     static readonly stableConstant: boolean;
     /**
      * @remarks
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      */
     stableFunction(): boolean;
@@ -968,13 +968,13 @@ export interface StableInterfaceWithDeprecatedProperty {
 // @ts-ignore Class inheritance allowed for native defined classes
 export class StableErrorWithDeprecatedProperty extends Error {
     private constructor();
-    stableProperty?: string;
+    readonly stableProperty?: string;
 }
 
 /**
  * @alpha
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
  */
 export function v2GlobalFunction(): boolean;

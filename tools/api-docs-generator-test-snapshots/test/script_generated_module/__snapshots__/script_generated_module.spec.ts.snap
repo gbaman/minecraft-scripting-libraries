@@ -188,7 +188,7 @@ This is version 1.x.x of this module, which is the latest as of version 1.0.0 of
 ## Enumerations
 - [ScriptGeneratedEnum](ScriptGeneratedEnum.md)
 
-# Type Aliases
+## Type Aliases
 - [TypeAliasWithInfoJsonComments](TypeAliasWithInfoJsonComments.md)
 - [TypeAliasWithTSDocComments](TypeAliasWithTSDocComments.md)
 
@@ -199,9 +199,9 @@ This is version 1.x.x of this module, which is the latest as of version 1.0.0 of
 
 exports[`Script Generated Modules > Properly generates documentation for modules generated entirely from script (Editor TS Bindings) > typescript/generated-module@1.0.0-beta.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -248,7 +248,7 @@ export declare class ScriptGeneratedClass {
      * @remarks
      * A script generated property
      *
-     * This property can't be used in restricted-execution mode.
+     * @privilege restricted-execution-unusable - This property can't be used in restricted-execution mode.
      *
      */
     testProperty: string | undefined;
@@ -257,7 +257,7 @@ export declare class ScriptGeneratedClass {
      * A script generated function with doc text defined in TSDoc
      * comments
      *
-     * This function can't be called in restricted-execution mode.
+     * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
      *
      * @param tsdocParam
      * Param comment from TSDoc

@@ -1,38 +1,54 @@
 name: Release Changes
 
-on: 
+on:
   push:
     branches:
       - main
 
+# Never run two releases at once; a queued run will pick up the previous run's tags.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   build:
-    if: github.actor != 'mc-npm'
     environment: release
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write # required for npm OIDC trusted publishing
+      contents: write # required to push release tags and create GitHub releases
 
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0 # semantic-release needs full history and tags to compute versions
           persist-credentials: false
-      - name: Use Node.js 22.x
-        uses: actions/setup-node@v4
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - run: npm ci
       - run: npm run test:ci # Fully build the repo so we have artifacts available to create releases, include tests so we don't ship in a broken state
-      
-      - name: Set git credentials
+
+      # Release tooling lives in its own package so contributors never install it.
+      - name: Install release tooling
+        run: npm ci --prefix .github/release
+
+      # Publishes to npm, pushes release tags and creates GitHub releases. Nothing is committed back to the repo.
+      - name: Release
+        run: npm run --prefix .github/release release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Handle failure and notify
+      - name: Handle failure
+        env:
+          webhook_secret: ${{ secrets.NOTIFICATION_WEBHOOK }}
+          server_url: ${{ github.server_url }}
+          repository: ${{ github.repository }}
+          sha: ${{ github.sha }}
+        if: failure()
         run: |
-          git config --global user.name "Minecraft Bot"
-          git config --global user.email "mc-npm@microsoft.com"
-          git remote set-url origin "https://$REPO_PAT@github.com/mojang/minecraft-scripting-libraries"
-        env:
-          REPO_PAT: ${{ secrets.REPO_PAT }}
-      
-      # Pass the token on the command line for publishing
-      - name: Publish
-        run: npm run release -- --token "$NPM_TOKEN" --yes --new
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          REPO_PAT: ${{ secrets.REPO_PAT }}
+          echo "Release failed! Issues encountered"
+          bash .github/scripts/notify-on-error.sh

@@ -176,9 +176,9 @@ Notes:
 
 exports[`Closures > Generates correct output closures > typescript/closure-tests@1.0.0.d.ts 1`] = `
 "// Type definitions for Minecraft Bedrock Edition script APIs
-// Project: https://docs.microsoft.com/minecraft/creator/
+// Project: https://learn.microsoft.com/minecraft/creator/
 // Definitions by: Jake Shirley <https://github.com/JakeShirley>
-//                 Mike Ammerlaan <https://github.com/mammerla>
+//                 Raphael Landaverde <https://github.com/rlandav>
 
 /* *****************************************************************************
    Copyright (c) Microsoft Corporation.
@@ -235,9 +235,9 @@ export class ExampleClass {
 
 /**
  * @remarks
- * This function can't be called in restricted-execution mode.
+ * @privilege no-restricted-execution - This function can't be called in restricted-execution mode.
  *
- * This function can be called in early-execution mode.
+ * @privilege early-execution-allowed - This function can be called in early-execution mode.
  *
  * @param closureRestrictedExec
  * This closure is called with restricted-execution privilege.
